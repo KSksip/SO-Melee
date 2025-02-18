@@ -2,7 +2,7 @@
 import playerInfo from './components/player-info.vue'
 import ScoreInfo from './components/score-info.vue';
 
-window.electronAPI.sendMessage('Hello from App.vue!');
+//window.electronAPI.sendMessage('Hello from App.vue!');
 </script>
 
 <template>

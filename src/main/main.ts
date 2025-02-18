@@ -1,10 +1,13 @@
 import {app, BrowserWindow, ipcMain, session} from 'electron';
 import {join} from 'path';
+import express from 'express'
+
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 310,
+    resizable: false,
     webPreferences: {
       preload: join(__dirname, 'preload.js'),
       nodeIntegration: false,
@@ -14,6 +17,7 @@ function createWindow () {
 
   if (process.env.NODE_ENV === 'development') {
     const rendererPort = process.argv[2];
+    console.log(`local server running on: http://localhost:${rendererPort} !`)
     mainWindow.loadURL(`http://localhost:${rendererPort}`);
   }
   else {
