@@ -1,7 +1,5 @@
 import {app, BrowserWindow, ipcMain, session} from 'electron';
 import {join} from 'path';
-import express from 'express'
-
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
