@@ -5,9 +5,9 @@
             <v-icon name="fa-chevron-down" class="size-5 translate-y-0.5 hover:cursor-pointer hover:text-zinc-400 grow-0" @click="isFocused = !isFocused"/>
         </div>
         
-        <div class="flex flex-col bg-zinc-800 mt-px rounded-b-md outline outline-zinc-600 absolute z-20 w-full" v-if="isFocused && filteredOptions?.length">
+        <div class="flex flex-col bg-zinc-800 mt-px rounded-b-md outline outline-zinc-600 absolute z-20 w-full max-h-20 overflow-y-scroll" v-if="isFocused && filteredOptions?.length">
         <!-- style this -->
-            <button v-for="option in filteredOptions"  @click="selectOption(option); isFocused = false" class="w-full text-start hover:bg-zinc-900 hover:cursor-pointer p-1">
+            <button v-for="option in filteredOptions"  @click="selectOption(option); isFocused = false" class="w-full text-sm text-start hover:bg-zinc-900 hover:cursor-pointer p-1">
                 <span>
                  {{ option }}
                 </span>
